@@ -119,11 +119,12 @@ header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid 
 
 /* about */
 .split{display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:center}
+.split>*{min-width:0}
 .split img{border-radius:var(--radius);width:100%;aspect-ratio:593/280;object-fit:cover}
 .checks{list-style:none;padding:0;margin:20px 0 0;display:grid;gap:10px}
 .checks li{padding-left:30px;position:relative}
 .checks li::before{content:"";position:absolute;left:0;top:.45em;width:16px;height:9px;border-left:3px solid var(--cyan);border-bottom:3px solid var(--cyan);transform:rotate(-45deg)}
-@media (max-width:860px){.split{grid-template-columns:1fr}}
+@media (max-width:860px){.split{grid-template-columns:1fr;gap:32px}}
 
 /* services */
 .services{background:var(--soft)}
@@ -147,7 +148,7 @@ header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid 
 
 /* reefer */
 .spec{width:100%;border-collapse:collapse;margin-top:12px;font-size:1rem}
-.spec th,.spec td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--line)}
+.spec th,.spec td{padding:12px 14px;white-space:nowrap;text-align:left;border-bottom:1px solid var(--line)}
 .spec thead th{font:600 .85rem Oswald,sans-serif;text-transform:uppercase;letter-spacing:.08em;color:var(--blue)}
 .spec tbody th{font-weight:600}
 .pills{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
@@ -202,6 +203,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
 .wa:hover{transform:scale(1.08)}
 :focus-visible{outline:3px solid var(--cyan);outline-offset:3px}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+@media (max-width:600px){section{padding:56px 0}.hero{padding:72px 0 56px}.facts{margin-top:40px}footer{padding-bottom:96px}.hero .ctas .btn{flex:1 1 100%;justify-content:center}.spec{font-size:.88rem}.spec th,.spec td{padding:10px 5px}.spec thead th{font-size:.72rem;letter-spacing:.04em}}
 </style>
 </head>
 <body>
