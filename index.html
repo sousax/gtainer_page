@@ -138,10 +138,10 @@ header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid 
 /* when */
 .when{background:var(--navy);color:#dbe6ef}
 .when h2{color:#fff}
-.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:40px;counter-reset:s;list-style:none;padding:0}
-.steps li{border-top:3px solid var(--cyan);padding-top:18px;counter-increment:s}
-.steps li::before{content:"0" counter(s);display:block;font:700 2.2rem Oswald,sans-serif;color:var(--cyan);margin-bottom:6px}
-.steps strong{color:#fff;display:block;font-size:1.1rem}
+.when-lead{color:#c3d1dc}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:40px;list-style:none;padding:0}
+.steps li{border-top:3px solid var(--cyan);padding-top:18px}
+.steps strong{color:#fff;display:block;font:600 1.5rem Oswald,sans-serif;margin-bottom:6px}
 @media (max-width:860px){.steps{grid-template-columns:1fr 1fr}}
 @media (max-width:520px){.steps{grid-template-columns:1fr}}
 
@@ -187,12 +187,18 @@ header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid 
 /* contact */
 .contact{background:linear-gradient(135deg,var(--navy) 0%,var(--steel) 100%);color:#dbe6ef}
 .contact h2{color:#fff}
-.chan{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:40px}
-.chan address{font-style:normal;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:var(--radius);padding:24px}
-.chan strong{display:block;font:600 1.15rem Oswald,sans-serif;color:#fff;margin-bottom:8px;text-transform:uppercase;letter-spacing:.04em}
-.chan a{color:#7fd9f9;text-decoration:none}
+.contact .lead{color:#c3d1dc}
+.contact-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:64px;align-items:end}
+.btn-lg{padding:18px 30px;font-size:1.1rem;line-height:1.25;margin-top:8px}
+.btn-lg svg{fill:var(--navy)}
+.wa-num{margin:14px 0 0;color:#c3d1dc;font-size:.95rem}
+.chan{margin:0;display:grid;gap:0}
+.chan div{padding:20px 0;border-top:1px solid rgba(255,255,255,.14)}
+.chan dt{font:600 .85rem Oswald,sans-serif;color:#fff;text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px}
+.chan dd{margin:0;display:flex;flex-wrap:wrap;gap:4px 20px}
+.chan a{color:#7fd9f9;text-decoration:none;padding:4px 0}
 .chan a:hover{text-decoration:underline}
-@media (max-width:860px){.chan{grid-template-columns:1fr}}
+@media (max-width:860px){.contact-grid{grid-template-columns:1fr;gap:40px}}
 
 footer{background:var(--navy-2);color:#8fa3b3;font-size:.9rem;padding:28px 0}
 footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
@@ -201,7 +207,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
 .wa:hover{transform:scale(1.08)}
 :focus-visible{outline:3px solid var(--cyan);outline-offset:3px}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
-@media (max-width:600px){section{padding:56px 0}.hero{padding:72px 0 56px}.facts{margin-top:40px}footer{padding-bottom:96px}.hero .ctas .btn{flex:1 1 100%;justify-content:center}.spec{font-size:.88rem}.spec th,.spec td{padding:10px 5px}.spec thead th{font-size:.72rem;letter-spacing:.04em}}
+@media (max-width:600px){section{padding:56px 0}.hero{padding:72px 0 56px}.facts{margin-top:40px}footer{padding-bottom:96px}.hero .ctas .btn{flex:1 1 100%;justify-content:center}.spec{font-size:.88rem}.spec th,.spec td{padding:10px 5px}.spec thead th{font-size:.72rem;letter-spacing:.04em}.btn-lg{width:100%;justify-content:center;font-size:1rem;padding:16px 18px}}
 </style>
 </head>
 <body>
@@ -276,8 +282,8 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
   <section class="when" aria-labelledby="quando">
     <div class="wrap">
       <h2 id="quando">Quando você precisa de um?</h2>
-      <p class="lead" style="color:#b9c8d4">Locar um container normalmente supre uma necessidade pontual, sem investimento em estrutura própria.</p>
-      <ol class="steps">
+      <p class="lead when-lead">Locar um container normalmente supre uma necessidade pontual, sem investimento em estrutura própria.</p>
+      <ul class="steps">
         <li><strong>Manutenção</strong>Durante a manutenção da câmara frigorífica.</li>
         <li><strong>Sazonalidade</strong>Em épocas como Natal, verão e outras datas de pico.</li>
         <li><strong>Eventos</strong>Em ações e eventos promocionais.</li>
@@ -398,14 +404,17 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
   </section>
 
   <section class="contact" id="contato">
-    <div class="wrap">
-      <h2>Fale com a Gtainer</h2>
-      <p class="lead" style="color:#b9c8d4">Para orçamento, o caminho mais rápido é o WhatsApp comercial. Diga qual equipamento, por quanto tempo e onde será entregue.</p>
-      <div class="chan">
-        <address><strong>WhatsApp comercial</strong><a href="https://wa.me/5513974114258?text=Ol%C3%A1%2C%20gostaria%20de%20um%20or%C3%A7amento." target="_blank" rel="noopener">(13) 97411-4258</a><br>Orçamentos em horário comercial</address>
-        <address><strong>Comercial</strong><a href="tel:+551332198500">(13) 3219-8500</a><br><a href="mailto:locacoes@gtainer.com.br">locacoes@gtainer.com.br</a></address>
-        <address><strong>Administrativo / Financeiro</strong><a href="tel:+551321385124">(13) 2138-5124</a><br><a href="mailto:administrativo@gtainer.com.br">administrativo@gtainer.com.br</a></address>
+    <div class="wrap contact-grid">
+      <div>
+        <h2>Fale com a Gtainer</h2>
+        <p class="lead">Para orçamento, o caminho mais rápido é o WhatsApp comercial. Diga qual equipamento, por quanto tempo e onde será entregue.</p>
+        <a class="btn btn-primary btn-lg" href="https://wa.me/5513974114258?text=Ol%C3%A1%2C%20gostaria%20de%20um%20or%C3%A7amento." target="_blank" rel="noopener"><svg width="22" height="22" viewBox="0 0 32 32" fill="#fff" aria-hidden="true"><path d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3zm0 23.7a10.7 10.7 0 0 1-5.5-1.5l-.4-.2-3.9 1 1-3.8-.2-.4A10.7 10.7 0 1 1 16 26.7zm5.9-8c-.3-.2-1.9-1-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7 0a8.8 8.8 0 0 1-4.4-3.8c-.3-.6.3-.5 1-1.7.1-.2 0-.4 0-.5l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6a1.2 1.2 0 0 0-.9.4 3.6 3.6 0 0 0-1.1 2.7 6.3 6.3 0 0 0 1.3 3.3 14.4 14.4 0 0 0 5.5 4.9c2 .9 2.8 1 3.9.8a3.3 3.3 0 0 0 2.1-1.5 2.7 2.7 0 0 0 .2-1.5c-.1-.2-.3-.3-.7-.5z"/></svg>Pedir orçamento no WhatsApp</a>
+        <p class="wa-num">(13) 97411-4258 · horário comercial</p>
       </div>
+      <dl class="chan">
+        <div><dt>Comercial</dt><dd><a href="tel:+551332198500">(13) 3219-8500</a><a href="mailto:locacoes@gtainer.com.br">locacoes@gtainer.com.br</a></dd></div>
+        <div><dt>Administrativo / Financeiro</dt><dd><a href="tel:+551321385124">(13) 2138-5124</a><a href="mailto:administrativo@gtainer.com.br">administrativo@gtainer.com.br</a></dd></div>
+      </dl>
     </div>
   </section>
 </main>
